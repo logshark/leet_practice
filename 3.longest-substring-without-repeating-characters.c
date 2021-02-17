@@ -14,13 +14,8 @@ int lengthOfLongestSubstring(char * s){
     int length = strlen(s);
     int maxlen = 0;
 
-    if (length == 1)
-    {
-        return length;
-    }
-
-    for (int start = 0; start < length-1; start++) {
-        for (int end = start+1; end < length; end++) {
+    for (int start = 0; start < length; start++) {
+        for (int end = start; end < length; end++) {
             int currentlen = 0;
             char ascii[128] = {0};
             for (int idx = start; idx <= end; idx++) {
