@@ -22,7 +22,7 @@ int lengthOfLongestSubstring(char * s){
     for (int start = 0; start < length-1; start++) {
         for (int end = start+1; end < length; end++) {
             int currentlen = 0;
-            char ascii[256] = {0};
+            char ascii[128] = {0};
             for (int idx = start; idx <= end; idx++) {
                 int current = s[idx];
 
