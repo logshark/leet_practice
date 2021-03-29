@@ -32,6 +32,7 @@ if __name__ == "__main__":
     solution = Solution()
     print(solution.findMedianSortedArrays(nums1, nums2))
 
+# 2021/02/24
 # Accepted
 # 2091/2091 cases passed (92 ms)
 # Your runtime beats 71.36 % of python3 submissions
