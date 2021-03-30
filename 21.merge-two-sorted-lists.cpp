@@ -16,7 +16,7 @@
  * };
  */
 
-#define DEBUG 1
+#define DEBUG 0
 #if DEBUG
 #include <stdio.h>
 #include <algorithm>
@@ -41,29 +41,27 @@ public:
         while (l1 != NULL && l2 != NULL)
         {
             if (l1->val <= l2->val) {
-                printf("l1 %d\n", l1->val);
+                // printf("l1 %d\n", l1->val);
                 tmp->next = l1;
                 l1 = l1->next;
             } else {
-                printf("l2 %d\n", l2->val);
+                // printf("l2 %d\n", l2->val);
                 tmp->next = l2;
                 l2 = l2->next;
             }
             tmp = tmp->next;
         }
 
-        while (l1)
+        if (l1)
         {
-            printf("l1 %d\n", l1->val);
+            // printf("l1 %d\n", l1->val);
             tmp->next = l1;
-            l1 = l1->next;
         }
         
-        while (l2)
+        if (l2)
         {
-            printf("l2 %d\n", l2->val);
+            // printf("l2 %d\n", l2->val);
             tmp->next = l2;
-            l2 = l2->next;
         }
 
         return result->next;
