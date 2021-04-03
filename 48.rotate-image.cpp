@@ -4,52 +4,42 @@
  * [48] Rotate Image
  */
 
+// reference
+// https://www.cnblogs.com/grandyang/p/4389572.html
+// http://glj8989332.blogspot.com/2019/09/leetcode-48-rotate-image.html
+
+#define DEBUG 0
+#ifdef DEBUG
 #include <iostream>
 #include <vector>
 using namespace std;
-
-void swap(int &a, int &b) {
-    a ^= b;
-    b ^= a;
-    a ^= b;
-}
-
+#endif
 
 // @lc code=start
 class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
+        vector<vector<int>> rotate_matrix = matrix;
+
+        int n = matrix.size() -1;
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix[i].size(); j++) {
-
-                int tmp = matrix[i][j];
-
-
+                rotate_matrix[i][j] = matrix[n-j][i];
             }
-            cout << endl;
         }
-        cout << endl;
+        matrix = rotate_matrix;
     }
 };
 // @lc code=end
 
-// https://www.cnblogs.com/grandyang/p/4389572.html
-// http://glj8989332.blogspot.com/2019/09/leetcode-48-rotate-image.html
-
+#ifdef DEBUG
 int main() {
     printf("start\n");
-
-    int a = 2;
-    int b = 3;
-
-    swap(a, b);
-    printf("a:%d b:%d\n", a, b);
-
     vector<vector<int>> matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-    printf("matrix size:%d\n", matrix.size());
+    printf("matrix size:%d\n", matrix[0].size());
 
-    for (int i = 0; i < matrix.size() -1 ; i++) {
+    for (int i = 0; i < matrix.size() ; i++) {
 
         for (int j = 0; j < matrix[i].size(); j++) {
             cout << matrix[i][j] << " ";
@@ -57,11 +47,19 @@ int main() {
         cout << endl;
     }
     cout << endl;
-    printf("111\n");
 
     Solution sol;
     sol.rotate(matrix);
 
+    for (int i = 0; i < matrix.size(); i++) {
+
+        for (int j = 0; j < matrix[i].size(); j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
     printf("end\n");
     return 0;
 }
+#endif
