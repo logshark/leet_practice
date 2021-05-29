@@ -18,20 +18,17 @@
  */
 class Solution {
 public:
-    int sum = 0;
     int sumOfLeftLeaves(TreeNode* root) {
         if (!root) {
             return 0;
         }
-
+        int sum = 0;
         // printf("%d ", root->val);
         if (root->left && root->left->left == NULL && root->left->right == NULL) {
             sum = sum + root->left->val;
         }
 
-        sumOfLeftLeaves(root->left);
-        sumOfLeftLeaves(root->right);
-        return sum;
+        return sum + sumOfLeftLeaves(root->left) + sumOfLeftLeaves(root->right);
     }
 };
 // @lc code=end
