@@ -24,8 +24,8 @@ public:
             return ans;
 
         for (int i = 0; i < nums.size(); i++) {
-            for (int j = i+1; j < nums.size(); j++) { 
-                
+            for (int j = i+1; j < nums.size(); j++) {
+
                 if (nums[i] + nums[j] == target)
                 {
                     ans.push_back(i);
@@ -55,7 +55,7 @@ int main(){
     Solution sol;
     vector<int> result = sol.twoSum(nums, target);
 
-    vector<int>::iterator result_intr = result.begin();  
+    vector<int>::iterator result_intr = result.begin();
 
     for (vector<int>::iterator it = result.begin(); it != result.end(); it++) {
        cout << *it << "\n";
