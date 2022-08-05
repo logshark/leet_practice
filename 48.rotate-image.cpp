@@ -4,7 +4,6 @@
  * [48] Rotate Image
  */
 
-// reference
 // https://www.cnblogs.com/grandyang/p/4389572.html
 // http://glj8989332.blogspot.com/2019/09/leetcode-48-rotate-image.html
 
