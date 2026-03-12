@@ -72,7 +72,7 @@ class Solution:
 
         result = []
         cur = []
-        candidates.sort()
+        # candidates.sort()
         self.dfs(candidates, target, cur, 0, result)
         # print(f"final:{result}")
         return result
@@ -80,20 +80,23 @@ class Solution:
     def dfs(self, candidates, target, cur, start, result):
         # print(f"target:{target}")
         if target == 0:
-            result.append(cur[:])
+            cur_sorted = cur[:]
+            cur_sorted.sort()
+            if cur_sorted not in result:
+                result.append(cur_sorted[:])
             # result.append(cur) #!!!!
             # print(f"result append:{cur}")
             # print(f"result in dfs func:{result}")
             return
 
-        # if target < 0:
-        #     return
+        if target < 0:
+            return
 
-        for i in range(start, len(candidates)):
+        for i in range(0, len(candidates)):
             # print(f"i:{i}, candidates:{candidates[i]}, target:{target} cur:{cur}")
-            if candidates[i] > target:
-                # print("break")
-                break
+            # if candidates[i] > target:
+            #     # print("break")
+            #     break
 
             cur.append(candidates[i])
             # print(f"after append cur:{cur}")
@@ -105,10 +108,9 @@ class Solution:
 
 if __name__ == '__main__':
     sol = Solution()
-    # output = sol.combinationSum([2,3,6,7], 7)
-    output = sol.combinationSum([8,7,4,3], 11)
+    output = sol.combinationSum([2,3,6,7], 7)
     print(output)
 
-    # 160/160 cases passed (38 ms)
-    # Your runtime beats 98.4 % of python3 submissions
-    # Your memory usage beats 71.46 % of python3 submissions (16.6 MB)
+    # 160/160 cases passed (537 ms)
+    # Your runtime beats 5 % of python3 submissions
+    # Your memory usage beats 33.21 % of python3 submissions (16.6 MB)
