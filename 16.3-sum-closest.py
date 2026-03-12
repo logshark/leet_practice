@@ -61,3 +61,8 @@ if __name__ == '__main__':
     output = sol.threeSumClosest([-1000,-1000,-1000], 10000)
 
     print("answer:" + str(output))
+
+# Accepted
+# 99/99 cases passed (762 ms)
+# Your runtime beats 83.9 % of python3 submissions
+# Your memory usage beats 13.41 % of python3 submissions (16.5 MB)
